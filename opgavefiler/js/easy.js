@@ -1,4 +1,4 @@
-let myAnsverInput = document.getElementById('answerOne');
+let myAnsverInput = document.getElementById('inputOne');
 let myAnsverButton = document.getElementById('answerButtonOne');
 
 let myAnsverFeedbackElement = document.getElementById('answerFeedback');
@@ -10,46 +10,55 @@ let myAnsverFeedbackElement = document.getElementById('answerFeedback');
 
 myAnsverButton.addEventListener('click', (event) => {
     event.preventDefault();
-    console.warn('opgave 1 og 2');
 
     /* din kode her.*/
-    const userInput = parseInt(myAnsverInput.value);
+let myAnsverInput = document.getElementById('InputOne');
+let myAnsverButton = document.getElementById('answerButtonOne');
 
-    switch (userInput) {
-        case 1:
-            showMessage("Du har valgt 1");
-            break;
+let myAnsverFeedbackElement = document.getElementById('answerFeedbackOne');
 
-        case 2:
-            showMessage("Du har valgt 2");
-            break;
-        case 3:
-            showMessage("Du har valgt 3");
-            break;
 
-        case 4:
-            showMessage("Du har valgt 4");
-            break;
 
-        case 5:
-            showMessage("Du har valgt 5");
+
+// opgave 1 og 2
+
+myAnsverButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    /* din kode her.*/
+    switch (document.getElementById('InputOne').value) {
+        case '1':
+            console.log('Valgt : 1');
+            showMessage('Valgt: 1');
+            break;
+        case '2':
+            console.log('Valgt : 2');
+            showMessage('Valgt: 2');
+            break;
+        case '3':
+            console.log('Valgt : 3');
+            showMessage('Valgt: 3');
+            break;
+        case '4':
+            console.log('Valgt: 4');
+            showMessage('Valgt: 4');
+            break;
+        case '5':
+            console.log('Valgt: 5');
+            showMessage('Valgt: 5');
             break;
 
         default:
-            showMessage("Du skal vælge et tal mellem 1 og 5");
+            console.log('Forkert tal');
+            showMessage('Forkert tal');
             break;
     }
-    //view function
-    function showMessage(myMessage) {
-        myAnsverFeedbackElement.innerHTML = `<p>${myMessage}</p>`;
-    }
-    console.log(userInput)
 });
-
 
 /* skriv evt en view funktion der viser om svaret er korrekt i myAnsverFeedbackElement, brug evt. innerHTML*/
 
-
+function showMessage(myMessage){
+    document.getElementById('answerFeedbackOne').innerHTML=`<p>${myMessage}</p>`;
+}
 
 // opgave 3 og 4
 myAnsverInput = document.getElementById('answerTwo');
@@ -61,6 +70,65 @@ myAnsverButton.addEventListener('click', (event) => {
     event.preventDefault();
     console.warn('opgave 3 og 4');
     /* din kode her.*/
+    const userInput = parseInt(myAnsverInput.value);
+    switch (userInput) {
+        case 1:
+            showMessage("Januar")
+            break;
+
+        case 2:
+            showMessage("Febuar")
+            break;
+
+        case 3:
+            showMessage("Marts")
+            break;
+
+        case 4:
+            showMessage("April")
+            break;
+
+        case 5:
+            showMessage("Maj")
+            break;
+
+        case 6:
+            showMessage("Juni")
+            break;
+
+        case 7:
+            showMessage("Juli")
+            break;
+
+        case 8:
+            showMessage("August")
+            break;
+
+        case 9:
+            showMessage("September")
+            break;
+
+        case 10:
+            showMessage("Oktober")
+            break;
+
+        case 11:
+            showMessage("November")
+            break;
+
+        case 12:
+            showMessage("December")
+            break;
+
+        default:
+            showMessage("Du skal vælge et tal mellem 1-12")
+            break;
+    }
+
+     function showMessage(myMessage) {
+        myAnsverFeedbackElement.innerHTML = `<p>${myMessage}</p>`;
+    }
+    console.log(userInput)
 });
 
 /* din view function her */
